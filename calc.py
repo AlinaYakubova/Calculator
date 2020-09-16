@@ -1,5 +1,5 @@
 def greetings():
-	greetings_str = "Hi, bitches! It's Alina mafaka! Input your focking numbers."
+	greetings_str = "Hey! Welcome to calculator"
 	print(greetings_str)
 	available_commands = "You can use one of following operations: +, -, /, *"
 	print(available_commands)
@@ -68,10 +68,10 @@ def main():
 			elif operation == "/":
 				result = div_two_numbs(first_numb, second_numb)
 			else:
-				result = "Suchara what are you doinnn.. Please enter valid operation."
+				result = "Oops! Please enter valid operation."
 		print(result)
 	return 0
 
 if __name__ == "__main__":
 	if main() != 0:
-		print("Something goes ne tak")
+		print("Something goes wrong")
