@@ -1,3 +1,5 @@
+
+
 def greetings():
 	greetings_str = "Hey! Welcome to calculator"
 	print(greetings_str)
@@ -34,41 +36,50 @@ def convert_to_proper_type(user_input):
 def main():
 	greetings()
 	while True:
-		first_numb = input("Enter first number: ")
-		error_code = exit_and_warning_func(first_numb)
-		if error_code == -1:
-			break
-		elif error_code == 1:
-			try:
-				first_numb = convert_to_proper_type(first_numb)
-			except ValueError:
-				print("Please enter a number")
-				continue
+		while True:
+			first_numb = input("Enter first number: ")
+			error_code = exit_and_warning_func(first_numb)
+			if error_code == -1:
+				break
+			elif error_code == 1:
+				try:
+					first_numb = convert_to_proper_type(first_numb)
+					break
+				except ValueError:
+					print("Please enter a number")
+					continue
 		
-		second_numb = input("Enter second number: ")
-		error_code = exit_and_warning_func(second_numb)
-		if error_code == -1:
-			break
-		elif error_code == 1:
-			try:
-				second_numb = convert_to_proper_type(second_numb)
-			except ValueError:
-				print("Please enter a number")
+		while True:
+			second_numb = input("Enter second number: ")
+			error_code = exit_and_warning_func(second_numb)
+			if error_code == -1:
+				break
+			elif error_code == 1:
+				try:
+					second_numb = convert_to_proper_type(second_numb)
+					break
+				except ValueError:
+					print("Please enter a number")
+					continue
+		
+		while True:
+			operation = input("Enter an operator: ")
+			if operation != "+" or operation != "+" or operation != "+" or operation != "+":
+				print("Please enter valid operation")
 				continue
-		operation = input("Enter an operator: ")
-		if type(operation) != str:
-			print("Please enter operator as a string :)")
-		else:	
-			if operation == "+":
-				result = sum_two_numbs(first_numb, second_numb)
-			elif operation == "*":
-				result = mul_two_numbs(first_numb, second_numb)
-			elif operation == "-":
-				result = sub_two_numbs(first_numb, second_numb)
-			elif operation == "/":
-				result = div_two_numbs(first_numb, second_numb)
 			else:
-				result = "Oops! Please enter valid operation."
+				break
+
+		if operation == "+":
+			result = sum_two_numbs(first_numb, second_numb)
+		elif operation == "*":
+			result = mul_two_numbs(first_numb, second_numb)
+		elif operation == "-":
+			result = sub_two_numbs(first_numb, second_numb)
+		elif operation == "/":
+			result = div_two_numbs(first_numb, second_numb)
+		else:
+			result = "Oops! Please enter valid operation."
 		print(result)
 	return 0
 
